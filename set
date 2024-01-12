@@ -606,7 +606,7 @@ b.
 #include<vector> 
 using namespace std; 
 template<typename Iterator> 
-auto accumulate(Iterator begin,Iterator end){ 
+int accumulate(Iterator begin,Iterator end){ 
 using ValueType = typename iterator_traits<Iterator>::value_type; 
 ValueType sum = ValueType(); 
 for(Iterator it = begin; it != end;++it){ 
