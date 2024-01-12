@@ -21,40 +21,29 @@ cout << max;
 -----------------------------
 2)) calender event
 
-#include<iostream>
-using namespace std;
-class calender
-{
-private:
-int a,b,c,d,e;
-string s;
-public:
-calender(int a,int b,int c,int d,int e,string s)
-{
-this->a=a;
-this->b=b;
-this->c=c;
-this->d=d;
-this->e=e;
-this->s=s;
-}
-void myfunc()
-{
-cout<<"Event Date: "<<a<<"/"<<b<<"/"<<c<<endl;
-cout<<"Event Time: "<<d<<":"<<e<<endl;
-cout<<"Description: "<<s;
-}
-};
-int main()
-{
-int a,b,c,d,e;
-string s;
-cin>>a>>b>>c>>d>>e;
-cin.ignore();
-getline(cin,s);
-calender cal(a,b,c,d,e,s);
-cal.myfunc();
-}
+#include <iostream> 
+using namespace std; 
+class A 
+{ 
+public: 
+void answer(int a, int b, int c, int d, int e, string f) 
+{ 
+cout<<"Event Date:"<<a<<"/"<<b<<"/"<<c<<endl; 
+cout<<"Event Time: "<<d<<":"<<e<<endl; 
+cout<<"Description: "<<f<<endl; 
+} 
+}; 
+int main() 
+{ 
+int a,b,c,d,e; 
+string f; 
+cin>>a>>b>>c>>d>>e; 
+cin.ignore(); 
+getline(cin,f); 
+A obj; 
+obj.answer(a,b,c,d,e,f); 
+return 0; 
+} 
 ------------------------------
 3)) accounts employee salary
 
@@ -226,67 +215,71 @@ return 0;
 -----------------------------------------
 8)) magic square
 
- #include<iostream>
+#include<iostream>
 using namespace std;
+
+
 int main(){
-int n;
-cin >> n;
-int arr[n][n];
-float res = true;
-
-for(int i=0;i<n;i++){
-for(int j=0;j<n;j++){
-cin >> arr[i][j];
-}
-}
-
-//Initial Value
-int tot = 0;
-for(int i=0;i<1;i++){
-for(int j=0;j<n;j++){
-tot += arr[i][j];
-}
-}
-
-for(int i=0;i<n;i++){
-int row = 0;
-for(int j=0;j<n;j++){
-row += arr[i][j];
-}if (row != tot){
-res = false;
-break;
-}
-}
-
-
-for(int i=0;i<n;i++){
-int row = 0;
-for(int j=0;j<n;j++){
-row += arr[j][i];
-}if (row != tot){
-res = false;
-break;
-}
-}
-
-int row = 0;
-for(int i=0;i<n;i++){
-for(int j=0;j<n;j++){
-if (i==j){
-row += arr[i][j];
-}
-}
-}if (row != tot){
-res = false;
-}
-
-if(res){
-cout << "The matrix is a magic square.";
-}
-else{
-cout << "The matrix is not a magic square.";
-}
-}
+    int n;
+    cin >> n;
+    int arr[n][n];
+    float res = true;
+    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin >>  arr[i][j];
+        }
+    }
+    
+    //Initial Value
+    int tot = 0;
+    for(int i=0;i<1;i++){
+        for(int j=0;j<n;j++){
+            tot += arr[i][j];
+        }
+    }
+    
+    //Row check
+    for(int i=0;i<n;i++){
+        int row = 0;
+        for(int j=0;j<n;j++){
+            row += arr[i][j];
+            }if (row != tot){
+                res = false;
+                break;
+        }
+    }
+    
+    //Col check
+    for(int i=0;i<n;i++){
+        int row = 0;
+        for(int j=0;j<n;j++){
+            row += arr[j][i];
+            }if (row != tot){
+                res = false;
+                break;
+        }
+    }
+    
+    // diagnoal check
+    int row = 0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if (i==j){
+                row += arr[i][j];
+            }
+            }
+        }if (row != tot){
+                res = false;
+    }
+    
+    if(res){
+        cout << "The matrix is a magic square.";
+    }
+    else{
+        cout << "The matrix is not a magic square.";
+    }
+        }
 ----------------------
 9)) numerator and denominator
 
@@ -495,8 +488,7 @@ return 0;
 ----------------------------------------
 16))
 
-
-
+--------
 
 -----------------------------------------------
 17))  swapping numbers
@@ -544,29 +536,28 @@ std::cout << "The string is not a palindrome" << std::endl;
 return 0;
 }
 ---------------------------------------------------
-19))  findpos
+19))  findpow
 
-#include<iostream>
-using namespace std;
-int findPos(int pos)
-{
-static int x=1;
-x=x*2;
-if(pos>x)
-{
-return findPos(pos);
-}
-if(pos==x){return x;}
-return x/2;
-}
-int main()
-{
-int num;
-cin>>num;
-cout<<findPos(num);
+#include<bits/stdc++.h> 
+using namespace std; 
+ 
+int power(int n) 
+{ 
+int powe=0; 
+while(pow(2,powe)<=n) 
+{ 
+powe++; 
+} 
+return pow(2,powe-1); 
+} 
+int main() 
+{ 
+int num; 
+cin>>num; 
+int result=power(num); 
+cout<<result; 
+} 
 
-return 0;
-}
 --------------------------------------
 20) banking apllication
 
