@@ -657,3 +657,21 @@ auto sum = accumulate(vec.begin(), vec.end());
 cout<<"Accumulated sum: "<<sum<<endl; 
 return 0; 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
